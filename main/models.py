@@ -3,5 +3,11 @@ from django.db import models
 
 
 class User(AbstractUser):
-    """Модель пользователя"""
+    """
+    Модель пользователя.
+    Является AUTH_USER_MODEL.
+    """
     email = models.EmailField('email address', unique=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
