@@ -14,7 +14,7 @@ class ProjectLimitOffsetPagination(LimitOffsetPagination):
 class ProjectModelViewSet(ModelViewSet):
     """View для CRUD Project"""
     serializer_class = ProjectModelSerializer
-    pagination_class = ProjectLimitOffsetPagination
+    # pagination_class = ProjectLimitOffsetPagination
 
     def get_queryset(self):
         q = self.request.query_params.get('name')
@@ -30,7 +30,7 @@ class ToDoLimitOffsetPagination(LimitOffsetPagination):
 class ToDoModelViewSet(ModelViewSet):
     """View для CRUD To-Do заметок"""
     serializer_class = ToDoModelSerializer
-    pagination_class = ToDoLimitOffsetPagination
+    # pagination_class = ToDoLimitOffsetPagination
 
     def destroy(self, request, *args, **kwargs):
         obj = self.get_object()

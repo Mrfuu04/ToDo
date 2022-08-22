@@ -1,10 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const UserItem = ({ user }) => {
     return (
         <tr>
             <td>
-                {user.username}
+                <Link to={`/user_projects/${user.id}`}>{user.username}</Link>
             </td>
             <td>
                 {user.first_name}
