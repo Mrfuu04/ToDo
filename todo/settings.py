@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'drf_yasg',
+    'graphene_django',
 
     # myapps
     'main',
@@ -154,4 +155,9 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_VERSIONING_CLASS':
         'rest_framework.versioning.QueryParameterVersioning',
+}
+
+# GraphQL settings
+GRAPHENE = {
+    "SCHEMA": "todo.schema.schema"
 }
