@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import GenericViewSet
 
 from main.models import User
-from main.serializers import UserModelSerializer
+from main.serializers import UserModelSerializer, UserModelSerialiverV2
 
 
 class UserModelViewSet(mixins.RetrieveModelMixin,
@@ -13,3 +13,8 @@ class UserModelViewSet(mixins.RetrieveModelMixin,
     """View для CRUD пользователей"""
     queryset = User.objects.all()
     serializer_class = UserModelSerializer
+
+    def get_serializer_class(self):
+        if self.request.version == 'v2':
+            return UserModelSerialiverV2
+        return UserModelSerializer
