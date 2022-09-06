@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
+    'drf_yasg',
+    'graphene_django',
 
     # myapps
     'main',
@@ -150,5 +152,12 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.TokenAuthentication',
         'rest_framework.authentication.SessionAuthentication',
-    ]
+    ],
+    'DEFAULT_VERSIONING_CLASS':
+        'rest_framework.versioning.QueryParameterVersioning',
+}
+
+# GraphQL settings
+GRAPHENE = {
+    "SCHEMA": "todo.schema.schema"
 }
